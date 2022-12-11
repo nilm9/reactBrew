@@ -2,26 +2,16 @@ import React from 'react'
 import { useState, createContext, useEffect } from 'react'
 import axios from 'axios';
 
-
-
 const CategoryContext = createContext();
-
-
-
 
 const CategoryProvider = ({children}) => {
 
-    const [category, setCategory] = useState({})
-
-    const handleChangeCategory = () =>{
-        setCategory(e.target.value)
-    }
+    const [category, setCategory] = useState([])
 
     const getCategories = async () =>{
         try {
             const url =`https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`      
             const { data} = await axios(url)
-            console.log(data.drinks);
             setCategory(data.drinks)
         } catch (error) {
             console.log(error);
@@ -35,7 +25,7 @@ const CategoryProvider = ({children}) => {
 
 
   return (
-    <CategoryContext.Provider value={{category, handleChangeCategory}}>
+    <CategoryContext.Provider value={{category}}>
         {children}
     </CategoryContext.Provider>
   
