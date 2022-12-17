@@ -14,10 +14,12 @@ const BrewProvider = ({children}) => {
 
       const {data} = await axios(url)
       setBrews(data.drinks);
+      console.log(data.drinks);
 
 
     } catch (error) {
       console.error(error);
+      
     }
   
   }
