@@ -16,6 +16,9 @@ const BrewProvider = ({children}) => {
       setBrews(data.drinks);
       console.log(data.drinks);
 
+      setTimeout(() => {
+        
+      }, timeout);
 
     } catch (error) {
       console.error(error);
