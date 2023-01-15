@@ -24,6 +24,7 @@ const FormBrew = () => {
       }, 2000);
     }
     getBrew(search)
+    
 
   }
 
@@ -60,7 +61,10 @@ const FormBrew = () => {
       </Row>
       <Row>
         <Col md={3} >
-          <Button variant="dark" className="text-uppercase w-100" type="submit">Search brews</Button>
+          <Button 
+          variant="dark" 
+          className="text-uppercase w-100" 
+          type="submit" >Search brews</Button>
         </Col>
       </Row>
     </Form>

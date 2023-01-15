@@ -4,7 +4,7 @@ import FormBrew from './components/FormBrew'
 import { CategoryProvider } from './context/CategoryProvider'
 import { BrewProvider } from './context/BrewProvider'
 import BrewsList from './components/BrewsList'
-
+import ModalBrew from './components/ModalBrew'
 function App() {
 
   return (
@@ -17,6 +17,7 @@ function App() {
         <Container className='mt-5'>
           <FormBrew/>
           <BrewsList/>
+          <ModalBrew/>
         </Container>
 
       </BrewProvider>

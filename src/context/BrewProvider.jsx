@@ -6,6 +6,7 @@ const BrewContext = createContext()
 const BrewProvider = ({children}) => {
 
   const [brews, setBrews] = useState([])
+  const [modal, setModal] = useState(false)
 
 
   const getBrew = async search => {
@@ -16,9 +17,7 @@ const BrewProvider = ({children}) => {
       setBrews(data.drinks);
       console.log(data.drinks);
 
-      setTimeout(() => {
-        
-      }, timeout);
+ 
 
     } catch (error) {
       console.error(error);
@@ -26,9 +25,13 @@ const BrewProvider = ({children}) => {
     }
   
   }
+
+  const handleModalClick = () => {
+      setModal(!modal);
+  }
     
   return (
-    <BrewContext.Provider value={{getBrew, brews}}>
+    <BrewContext.Provider value={{getBrew, brews, handleModalClick, modal}}>
         {children}
     </BrewContext.Provider>
   )
